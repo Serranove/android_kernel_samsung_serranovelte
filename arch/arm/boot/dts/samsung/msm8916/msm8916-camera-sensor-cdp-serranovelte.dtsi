@@ -12,6 +12,8 @@
  */
 &soc {
 	i2c_22: i2c@22 {
+		#address-cells = <1>;
+		#size-cells = <1>;
 		cell-index = <22>;
 		compatible = "i2c-gpio";
 	        i2c-gpio-scl = <&msm_gpio 32 0x00>;
@@ -33,6 +35,8 @@
    };
 
 	i2c_21: i2c@21 {
+		#address-cells = <1>;
+		#size-cells = <1>;
 		cell-index = <21>;
 		compatible = "i2c-gpio";
 		i2c-gpio-scl = <&msm_gpio 11 0x00>;

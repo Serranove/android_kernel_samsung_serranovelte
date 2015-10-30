@@ -413,7 +413,7 @@ config EARJACK_ADC_SYSFS
 	btn type adc values.
 
 config TIMA_LOG
-	tristate "Support for dumping TIMA log"
+	bool "Support for dumping TIMA log"
 	default y
 	help
 	  This option enables support for dumping TIMA log

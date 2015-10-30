@@ -10,13 +10,13 @@ gpu_sysfs-y :=	gpu_sysfs_main.o \
 
 # ==================================
 # Start --------- Qualcomm ---------
-ifeq ($(CONFIG_MSM_KGSL),y)
+#ifeq ($(CONFIG_MSM_KGSL),y)
 
 gpu_sysfs-y +=	gpu_sysfs_target_kgsl.o
 # Verify: target specific file is defined.
-GPU_SYSFS_TARGET_FILE_DEFINED=1
+GPU_SYSFS_TARGET_FILE_DEFINED:=1
 
-endif
+#endif
 # End ---------- Qualcomm ----------
 # ==================================
 
@@ -25,6 +25,8 @@ endif
 # Generate error if the TARGET
 # specific file is not defined OR
 # picked using the PLATFORM configs.
+$(warning FIXME: CONFIG_MSM_KGSL='$(CONFIG_MSM_KGSL)')
+$(warning FIXME: GPU_SYSFS_TARGET_FILE_DEFINED='$(GPU_SYSFS_TARGET_FILE_DEFINED)')
 ifndef GPU_SYSFS_TARGET_FILE_DEFINED
 $(warning **** Make sure target file is defined. \
                Check the TARGET and GPU configs in Makefile and Kernel Config. \
